@@ -15,7 +15,7 @@
 	<!-- Se activa el uso de anotaciones en las clases bean -->    
     <context:annotation-config></context:annotation-config>
     <!-- Se define en qué paquete están las clases que podrán tener anotaciones -->
-    <context:component-scan base-package="dal,controlador"></context:component-scan>
+    <context:component-scan base-package="dal,controlador,dto"></context:component-scan>
 		
 	<!-- Se configura la configuración para la conexión a base de datos -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -28,13 +28,13 @@
 	<!-- Configuración del JPA -->
 	<bean id="entityManagerFactory" 
 			class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-			p:packagesToScan="dao"
+			p:packagesToScan="dal"
             p:dataSource-ref="dataSource"
 			>
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 				<property name="generateDdl" value="true" />
-				<property name="showSql" value="true" />
+				<property name="showSql" value="false" />
 				<property name="databasePlatform" value="org.hibernate.dialect.PostgreSQLDialect" />
 			</bean>
 		</property>

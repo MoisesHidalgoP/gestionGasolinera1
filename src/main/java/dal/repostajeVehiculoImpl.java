@@ -21,9 +21,17 @@ public class repostajeVehiculoImpl implements repostajeVehiculoServicio{
 
 	@Override
 	public List<repostajeVehiculo> buscarTodosRepostajes() {
-        return em.createQuery("SELECT importe FROM repostajeVehiculo importe").getResultList();
+        return em.createQuery("SELECT Repostaje FROM repostajeVehiculo Repostaje").getResultList();
         
 	}
+
+	@Override
+	public List<repostajeVehiculo> importeTotalCombustible() {
+		
+		return (List<dal.repostajeVehiculo>) em.createQuery("SELECT repostajeVehiculo.importe FROM repostajeVehiculo Repostaje").getParameter("importe");
+	}
+	
+	
 
 	
 

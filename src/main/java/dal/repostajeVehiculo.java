@@ -17,7 +17,7 @@ public class repostajeVehiculo {
 	private int id;
 	@Column(name="md_uuid",nullable=false)
 	private String md_uuid;
-	@Column(name="md_fecha",nullable=false)
+	@Column(name="md_fecha")
 	private Date md_fecha;
 	@Column(name="dniCliente")
 	private String dniCliente;
@@ -76,19 +76,26 @@ public class repostajeVehiculo {
 	}
 	
 	//Constructores
-	public repostajeVehiculo(int id, String md_uuid, Date md_fecha, String dniCliente, String matriculaVehiculo,
+	public repostajeVehiculo(int id, String md_uuid, String dniCliente, String matriculaVehiculo,
 			Double importe) {
 		super();
 		this.id = id;
 		this.md_uuid = md_uuid;
-		this.md_fecha = md_fecha;
 		this.dniCliente = dniCliente;
 		this.matriculaVehiculo = matriculaVehiculo;
 		this.importe = importe;
 	}
+	
 	public repostajeVehiculo() {
 		super();
 	}
+	
+	@Override
+	public String toString() {
+		return "repostajeVehiculo [id=" + id + ", md_uuid=" + md_uuid + ", dniCliente=" + dniCliente
+				+ ", matriculaVehiculo=" + matriculaVehiculo + ", importe=" + importe + "]";
+	}
+
 	
 
 }

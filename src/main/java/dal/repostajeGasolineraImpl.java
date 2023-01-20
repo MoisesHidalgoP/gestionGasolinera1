@@ -3,13 +3,15 @@ package dal;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-@Service
+@Repository
 public class repostajeGasolineraImpl implements repostajeGasolineraServicio {
 	
 	@PersistenceContext
 	private EntityManager em;
+
 
 	@Override
 	public void insertarRepostajeNormal(repostajeGasolinera repostaje) {

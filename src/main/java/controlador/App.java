@@ -2,10 +2,22 @@ package controlador;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
+
+import dal.repostajeGasolinera;
+import dal.repostajeVehiculo;
+
+
+
+@Controller
 public class App {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		ApplicationContext context = new ClassPathXmlApplicationContext("contexto.xml"); 
+		 dto.consultas consulta = context.getBean(dto.consultas.class);
 		  Scanner sn = new Scanner(System.in);
 		  boolean salir = false;
 		  //Guardamos la información del usuario
@@ -27,15 +39,23 @@ public class App {
 				  switch(opcion) {
 				  case 1: 
 					  System.out.println("Has seleccionado la opcion 1");
-					  break;
+					  consulta.insertarUnRepostajeNormal(new repostajeGasolinera(2,"sbhu",50.00));
+					  System.out.println("Ah repostado usted 50 euros");
 				  case 2: 
 					  System.out.println("Has seleccionado la opcion 2");
+					  consulta.insertarUnRepostajeVehiculo(new repostajeVehiculo(3,"euibh","6534839-P","64756-KHG",100.00));
+					  
 					  break;
 				  case 3: 
 					  System.out.println("Has seleccionado la opcion 3");
+					  consulta.verTodosRepostajes().toString();
+					  System.out.println(consulta.verTodosRepostajes());
+					  
 					  break;
 				  case 4: 
 					  System.out.println("Has seleccionado la opcion 4");
+					  consulta.verTodosRepostajes().toString();
+					  System.out.println(consulta.verTodosRepostajes());
 					  break;
 				  case 5: 
 					  System.out.println("Has seleccionado la opcion 5");

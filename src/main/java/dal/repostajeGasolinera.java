@@ -18,7 +18,7 @@ public class repostajeGasolinera {
 	private int id;
 	@Column(name="md_uuid",nullable=false)
 	private String md_uuid;
-	@Column(name="md_fecha",nullable=false)
+	@Column(name="md_fecha")
 	private Date md_fecha;
 	@Column(name="hora")
 	private Timestamp hora;
@@ -58,14 +58,14 @@ public class repostajeGasolinera {
 	}
 	
 	//Constructores 
-	public repostajeGasolinera(int id, String md_uuid, Date md_fecha, Timestamp hora, Double importe) {
-		super();
-		this.id = id;
-		this.md_uuid = md_uuid;
-		this.md_fecha = md_fecha;
-		this.hora = hora;
-		this.importe = importe;
-	}
+	
+	
+    public repostajeGasolinera(int id,String md_uuid, Double importe) {
+    	this.id=id;
+    	this.md_uuid=md_uuid;
+    	this.importe=importe;
+    	
+    }
 	
 	public repostajeGasolinera() {
 		super();
