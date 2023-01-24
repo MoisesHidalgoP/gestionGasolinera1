@@ -1,5 +1,5 @@
 
-package dto;
+package consultas;
 
 import java.util.List;
 
@@ -39,5 +39,20 @@ public class consultas {
 	public List<repostajeVehiculo>totalCombistible(){
 		return rpv.importeTotalCombustible();
 	}
-
+	
+	@Transactional 
+	public List<repostajeGasolinera>listaLlenadoDeposito(){
+		return rp.verLlenadoDeposito();
+	}
+	
+	@Transactional
+	public void llenarDeposito(repostajeGasolinera RepostajeGasolinera) {
+		rp.llenarDeposito(RepostajeGasolinera);
+	}
+	@Transactional
+	public List<repostajeGasolinera> verTodosRepostajesGasolinera() {
+		// TODO Auto-generated method stub
+		return rp.buscarTodosRepostajes();
+	}
+	
 }

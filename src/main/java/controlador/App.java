@@ -17,7 +17,7 @@ public class App {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ApplicationContext context = new ClassPathXmlApplicationContext("contexto.xml"); 
-		 dto.consultas consulta = context.getBean(dto.consultas.class);
+		 consultas.consultas consulta = context.getBean(consultas.consultas.class);
 		  Scanner sn = new Scanner(System.in);
 		  boolean salir = false;
 		  //Guardamos la información del usuario
@@ -49,22 +49,26 @@ public class App {
 				  case 3: 
 					  System.out.println("Has seleccionado la opcion 3");
 					  consulta.verTodosRepostajes().toString();
+					  consulta.verTodosRepostajesGasolinera().toString();
 					  System.out.println(consulta.verTodosRepostajes());
+					  System.out.println(consulta.verTodosRepostajesGasolinera());
 					  
 					  break;
 				  case 4: 
 					  System.out.println("Has seleccionado la opcion 4");
-					  consulta.verTodosRepostajes().toString();
-					  System.out.println(consulta.verTodosRepostajes());
+					  
 					  break;
 				  case 5: 
 					  System.out.println("Has seleccionado la opcion 5");
+					  consulta.llenarDeposito(new repostajeGasolinera(3,"Camion1",(double) 500));
 					  break;
 				  case 6: 
 					  System.out.println("Has seleccionado la opcion 6");
 					  break;
 				  case 7: 
 					  System.out.println("Has seleccionado la opcion 7");
+					  consulta.listaLlenadoDeposito().toString();
+					  System.out.println(consulta.listaLlenadoDeposito());
 					  break;
 				  case 8: 
 					  System.out.println("Gracias por utilizar la aplicación");
