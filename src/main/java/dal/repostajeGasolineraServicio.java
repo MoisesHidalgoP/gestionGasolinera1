@@ -12,6 +12,10 @@ public interface repostajeGasolineraServicio {
 	public void llenarDeposito(repostajeGasolinera RepostajeGasolinera);
 	//Signatura del metodo buscarTodosRepostajes (REPOSTAJE GASOLINERA)
 	public List<repostajeGasolinera>buscarTodosRepostajes();
+	//Signatura que elimina el ultimo depósito
+	public void eliminarDeposito();
+	
+	
 	
 
 }

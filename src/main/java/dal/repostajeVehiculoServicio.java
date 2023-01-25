@@ -9,6 +9,7 @@ public interface repostajeVehiculoServicio {
 	public List<repostajeVehiculo>buscarTodosRepostajes();
 	//Signatura del metodo que suma todos los importes totales
 	public List<repostajeVehiculo>importeTotalCombustible();
+	
 
 
 }

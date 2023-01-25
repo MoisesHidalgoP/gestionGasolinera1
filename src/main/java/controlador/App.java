@@ -32,7 +32,7 @@ public class App {
 			  System.out.println("Eliminar último llenado de depósito");
 			  System.out.println("Ver todos los llenados de depósito");
 			  
-			  System.out.println("Introduce una de las opciones: ");
+			  System.out.println("Introduce una de las opciones[1..7]: ");
 			  opcion = sn.nextInt();
 			  
 			  try {
@@ -55,7 +55,7 @@ public class App {
 					  
 					  break;
 				  case 4: 
-					  System.out.println("Has seleccionado la opcion 4");
+					  
 					  
 					  break;
 				  case 5: 
@@ -64,6 +64,7 @@ public class App {
 					  break;
 				  case 6: 
 					  System.out.println("Has seleccionado la opcion 6");
+					  consulta.eliminarUltimoDeposito();
 					  break;
 				  case 7: 
 					  System.out.println("Has seleccionado la opcion 7");

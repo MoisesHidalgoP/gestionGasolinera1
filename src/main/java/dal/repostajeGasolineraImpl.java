@@ -37,6 +37,16 @@ public class repostajeGasolineraImpl implements repostajeGasolineraServicio {
 		// TODO Auto-generated method stub
 		return em.createQuery("SELECT Repostaje FROM repostajeGasolinera Repostaje").getResultList();
 	}
+	@Override
+    public void eliminarDeposito() {
+		// TODO Auto-generated method stub
+    	List<repostajeGasolinera>llenados = verLlenadoDeposito();
+    	em.remove(llenados.get(llenados.size() - 1));
+		
+	}
+	
+	
+
 	
 
 }

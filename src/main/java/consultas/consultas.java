@@ -54,5 +54,15 @@ public class consultas {
 		// TODO Auto-generated method stub
 		return rp.buscarTodosRepostajes();
 	}
+	@Transactional
+	public void eliminarUltimoDeposito() {
+		rp.eliminarDeposito();
+	}
+	@Transactional 
+	public List<repostajeVehiculo> totalRepostajeVehiculo() {
+		return rpv.importeTotalCombustible();
+	}
+	
+	
 	
 }
